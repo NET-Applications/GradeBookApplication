@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/slnx.sqlite
+/.vs
+/ACM/.vs/ACM/v15/Server/sqlite3
+/ACM/.vs/ACM/v15
+/ACM/ACM.BL/obj/Debug
