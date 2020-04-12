@@ -28,31 +28,6 @@ namespace ACM.BL
 
         #region public methods
         ///<summary>
-        /// Retrieve all orders.
-        /// </summary>
-        public List<Order> Retrieve()
-        {
-            // Code that retrieve all of the orders.
-            return new List<Order>();
-        }
-        ///<summary>
-        /// Retrieve one order. 
-        ///</summary>
-        public Order Retrieve(int orderId)
-        {
-            // Code that retrieves the defined order.
-            return new Order(orderId);
-        }
-        ///<summary>
-        /// Saves the current order.
-        ///</summary>
-        ///<returns>Boolean value.</returns>
-        public bool Save()
-        {
-            // Code that saves the defined order.
-            return true;
-        }
-        ///<summary>
         /// Validates the order data.
         ///</summary>
         ///<returns>Boolean value.</returns>

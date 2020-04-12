@@ -32,31 +32,6 @@ namespace ACM.BL
 
         #region public methods
         ///<summary>
-        /// Retrieve all products.
-        /// </summary>
-        public List<Product> Retrieve()
-        {
-            // Code that retrieve all of the products.
-            return new List<Product>();
-        }
-        ///<summary>
-        /// Retrieve one product. 
-        ///</summary>
-        public Product Retrieve(int productId)
-        {
-            // Code that retrieves the defined product.
-            return new Product(productId);
-        }
-        ///<summary>
-        /// Saves the current product.
-        ///</summary>
-        ///<returns>Boolean value.</returns>
-        public bool Save()
-        {
-            // Code that saves the defined customer.
-            return true;
-        }
-        ///<summary>
         /// Validates the product data.
         ///</summary>
         ///<returns>Boolean value.</returns>

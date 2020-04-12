@@ -67,31 +67,6 @@ namespace ACM.BL
 
         #region public methods
         ///<summary>
-        /// Retrieve all customers.
-        /// </summary>
-        public List<Customer> Retrieve()
-        {
-            // Code that retrieve all of the customers.
-            return new List<Customer>();
-        }
-        ///<summary>
-        /// Retrieve one customer. 
-        ///</summary>
-        public Customer Retrieve(int customerId)
-        {
-            // Code that retrieves the defined customer.
-            return new Customer(customerId);
-        }
-        ///<summary>
-        /// Saves the current customer.
-        ///</summary>
-        ///<returns>Boolean value.</returns>
-        public bool Save()
-        {
-            // Code that saves the defined customer.
-            return true;
-        }
-        ///<summary>
         /// Validates the customer data.
         ///</summary>
         ///<returns>Boolean value.</returns>
