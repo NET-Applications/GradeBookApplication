@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
 
         #region public constructors
-        public Customer()
+        // Default constructor re-uses the one argument constructor.
+        public Customer() : this(0)
         {
         }
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
         #endregion public constructors
 
@@ -25,8 +27,12 @@ namespace ACM.BL
         #endregion private fields       
 
         #region public properties
-        //Property to get and set the customer ID
+        //Property to get and set addresses of the customer.
+        public List<Address> AddressList { get; set; }
+        //Property to get and set the customer ID.
         public int CustomerId { get; private set; }
+        //Property to get or set the type of customer.
+        public int CustomerType { get; set; }
         //Property to get and set emil address of the customer.
         public string EmailAddress { get; set; }
         //Property to set and get the first name of the customer.
@@ -65,12 +71,14 @@ namespace ACM.BL
         }
         #endregion public properties
 
-        #region public methods
+        #region public overridden methods
+        // Overriding toString method using expresion bodied members.
+        public override string ToString() => FullName;
         ///<summary>
         /// Validates the customer data.
         ///</summary>
         ///<returns>Boolean value.</returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrWhiteSpace(LastName))
@@ -79,7 +87,7 @@ namespace ACM.BL
                 isValid = false;
             return isValid;
         }
-        #endregion public methods
+        #endregion public overridden methods
 
     }
 }

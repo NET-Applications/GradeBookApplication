@@ -37,6 +37,38 @@ namespace ACM.BL.Test
             // assert
             Assert.AreNotEqual(expected.OrderDate, result.OrderDate);
         }
+        [TestMethod]
+        public void SaveTestValid()
+        {
+            // arrange
+            var orderRepository = new OrderRepository();
+            var updatedOrder = new Order(2)
+            {
+                OrderDate = new DateTimeOffset(DateTime.Now.Year, 4, 14, 10, 00, 00, new TimeSpan(7, 0, 0)),
+                HasChanges = true
+            };
+
+            // act
+            var result = orderRepository.Save(updatedOrder);
+            // assert
+            Assert.IsTrue(result);
+        }
+        [TestMethod]
+        public void SaveTestMissingOrderDate()
+        {
+            // arrange
+            var orderRepository = new OrderRepository();
+            var updatedOrder = new Order(2)
+            {
+                OrderDate = null,
+                HasChanges = true
+            };
+
+            // act
+            var result = orderRepository.Save(updatedOrder);
+            // assert
+            Assert.IsFalse(result);
+        }
         #endregion public test methods
     }
 }

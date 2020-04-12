@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ACM.BL.Test
@@ -95,6 +96,16 @@ namespace ACM.BL.Test
             var result = customer.Validate();
             // assert
             Assert.AreEqual(expected, result);
+        }
+        [TestMethod]
+        public void AddressListValid()
+        {
+            // arrange
+            List<Address> expected = new List<Address>();
+            // act
+            var result = new Customer();
+            // assert
+            Assert.AreEqual<int>(expected.Count, result.AddressList.Count);
         }
         #endregion public test methods
 

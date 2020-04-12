@@ -31,10 +31,29 @@ namespace ACM.BL
         /// Saves the current product.
         ///</summary>
         ///<returns>Boolean value.</returns>
-        public bool Save()
+        public bool Save(Product product)
         {
             // Code that saves the defined customer.
-            return true;
+            var success = true;
+            if(product.HasChanges)
+            {
+                if(product.IsValid)
+                {
+                    if(product.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
         #endregion public methods
     }

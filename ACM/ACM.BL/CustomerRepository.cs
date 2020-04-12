@@ -8,6 +8,18 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
+        #region public constructors
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+        #endregion public constructors
+
+        #region private properties
+        //Property to get or set address repository within the class.
+        private AddressRepository addressRepository { get; set; }
+        #endregion private properties
+
         #region public methods
         ///<summary>
         /// Retrieve one customer. 
@@ -26,6 +38,7 @@ namespace ACM.BL
                 customer.EmailAddress = "fbaggins@hobitton.me";
                 customer.FirstName = "Frodo";
                 customer.LastName = "Baggins";
+                customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList<Address>();
             }
             return customer;
         }
@@ -33,10 +46,29 @@ namespace ACM.BL
         /// Saves the current customer.
         ///</summary>
         ///<returns>Boolean value.</returns>
-        public bool Save()
+        public bool Save(Customer customer)
         {
             // Code that saves the defined customer.
-            return true;
+            var success = true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // Call an Insert Stored Procedure
+                    }
+                    else
+                    {
+                        // Call an Update Stored Procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
         #endregion public methods
     }
