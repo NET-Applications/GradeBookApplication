@@ -7,3 +7,8 @@
 /ACM/.vs/ACM/v15/Server/sqlite3
 /ACM/.vs/ACM/v15
 /ACM/ACM.BL/obj/Debug
+/ACM/.vs/ACM/DesignTimeBuild
+/ACM/ACM.BL/bin/Debug/ACM.BL.dll
+/ACM/ACM.BL/bin/Debug/ACM.BL.pdb
+/ACM/Tests/ACM.BL.Test/bin/Debug/netcoreapp2.1
+/ACM/Tests/ACM.BL.Test/obj
