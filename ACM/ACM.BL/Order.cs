@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.Common;
 
 namespace ACM.BL
 {
-    public class Order : EntityBase
+    public class Order : EntityBase, ILoggable
     {
         #region public constructors
         public Order() : this(0)
@@ -32,6 +33,11 @@ namespace ACM.BL
         //Property to get the order id, it can be set within the class.
         public int OrderId { get; private set; }
         #endregion public properties
+
+        #region public methods
+        public string Log() =>
+         $"{OrderId} Date:{OrderDate} AddressId:{ShippingAddressId} Status:{EntityState.ToString()}";
+        #endregion public methods
 
         #region public overridden methods
         // Overriding toString method using expresion bodied members.

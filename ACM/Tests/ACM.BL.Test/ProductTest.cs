@@ -41,6 +41,36 @@ namespace ACM.BL.Test
             // assert
             Assert.AreEqual(expected, result);
         }
+        [TestMethod]
+        public void ProductNameWithoutSpaces()
+        {
+            // arrange
+            Product product = new Product(1)
+            {
+                ProductName = "SonicScrewdriver",
+                CurrentPrice = 25m
+            };
+            var expected = "Sonic Screwdriver";
+            // act
+            var result = product.ProductName;
+            // assert
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod]
+        public void ProductNameWithSpaces()
+        {
+            // arrange
+            Product product = new Product(1)
+            {
+                ProductName = "Sonic Screwdriver",
+                CurrentPrice = 25m
+            };
+            var expected = "Sonic Screwdriver";
+            // act
+            var result = product.ProductName;
+            // assert
+            Assert.AreEqual(expected, result);
+        }
         #endregion public test methods
     }
 }

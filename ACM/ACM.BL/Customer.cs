@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.Common;
 
 namespace ACM.BL
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
 
         #region public constructors
@@ -48,7 +49,7 @@ namespace ACM.BL
                     case var name when String.Equals(name, FirstName) || String.Equals(name, LastName):
                         return name;
                     case var name when !String.IsNullOrWhiteSpace(name):
-                        return $"{LastName}, {FirstName}";                        
+                        return $"{LastName}, {FirstName}";
                     default:
                         return string.Empty;
 
@@ -70,6 +71,11 @@ namespace ACM.BL
             }
         }
         #endregion public properties
+
+        #region public methods
+        public string Log() => 
+          $"CustomerID:{CustomerId} FullName:{FullName} Email:{EmailAddress} Status:{EntityState.ToString()}";
+        #endregion public methods
 
         #region public overridden methods
         // Overriding toString method using expresion bodied members.

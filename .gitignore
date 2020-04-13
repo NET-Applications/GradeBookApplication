@@ -12,3 +12,11 @@
 /ACM/ACM.BL/bin/Debug/ACM.BL.pdb
 /ACM/Tests/ACM.BL.Test/bin/Debug/netcoreapp2.1
 /ACM/Tests/ACM.BL.Test/obj
+/ACM/Acme.Common/bin/Debug
+/ACM/Acme.Common/obj/Debug
+/ACM/packages/MSTest.TestAdapter.1.3.2/build
+/ACM/packages/MSTest.TestAdapter.1.3.2
+/ACM/packages/MSTest.TestFramework.1.3.2
+/ACM/Tests/Acme.Common.Test/bin/Debug
+/ACM/Tests/Acme.Common.Test/obj/Debug
+/ACM/ACM.BL/bin/Debug
